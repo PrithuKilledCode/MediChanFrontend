@@ -3,14 +3,12 @@ import React from 'react';
 
 const ImageTextComponent: React.FC<{ imageUrl: string; text: string }> = ({ imageUrl, text }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center h-screen bg-gray-100">
-      {/* Image */}
-      <div className="w-full md:w-1/2 flex justify-center items-center">
-        <img src={imageUrl} alt="Image" className="w-full md:max-w-lg" />
+    <div className="md:grid md:grid-cols-2 md:grid-rows-1 md:gap-4  my-7 flex flex-wrap items-center justify-center ">
+      <div className="flex items-center justify-end flex-wrap">
+        <img src={imageUrl} alt="" />
+        <div className=" md:w-36"></div>
       </div>
-
-      {/* Text */}
-      <div className="w-full md:w-1/2 text-center md:text-left px-4">
+      <div className="flex items-center justify-start w-3/4 my-6">
         <p>{text}</p>
       </div>
     </div>
@@ -18,7 +16,7 @@ const ImageTextComponent: React.FC<{ imageUrl: string; text: string }> = ({ imag
 };
 
 export default ImageTextComponent;
-In this component, the imageUrl prop is used to specify the URL of the image, and the text prop is used to specify the text content. The image is displayed on the left side (taking up half of the width on medium screens and above), and the text is displayed on the right side. The component's width is set to the width of the screen. Adjust the image size and text styling as needed for your design.
+
 
 
 
