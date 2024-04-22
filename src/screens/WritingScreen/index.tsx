@@ -4,9 +4,9 @@ import ImageSizePopup from "../../components/ImageSizePopUp";
 import { FileUploader } from "react-drag-drop-files";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { log } from "console";
 import EditableText from "../../components/EditableTextComponent";
 import Popup from "../../components/plusPopup";
+import CodeEditor from "../../components/codeEditor";
 
 interface ImageBlock {
   type: "image";
@@ -29,6 +29,9 @@ const BlogEditor: React.FC = () => {
   const [imageIndex, setImageIndex] = useState<number>(0);
   const [imageBlogArr, setImageBlogArr] = useState<ImageBlock[]>([]);
   const [active, setActive] = useState(false);
+  const [options, setOptions] = useState('');
+  const [code, setCode] = useState('const greeting = "Hello, world!";');
+
   // const [editableText, setEditableText] = useState("");
 
   const handleTextChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -40,6 +43,7 @@ const BlogEditor: React.FC = () => {
   };
   const handleOptionSelect = (option: string) => {
     console.log("Option selected:", option);
+    setOptions(option);
     // Implement logic for handling the selected option
   };
   const fileTypes = ["JPG", "PNG", "GIF"];
@@ -185,7 +189,11 @@ const BlogEditor: React.FC = () => {
             placeholder="Write your blog content here..."
             onKeyDown={(e) => handleTextChange(e)}
           />
+
+          
         </div>
+<CodeEditor code={code}setCode={setCode}/>
+
       </div>
     </>
   );

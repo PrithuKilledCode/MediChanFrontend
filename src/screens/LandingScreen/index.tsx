@@ -99,7 +99,7 @@ const LandingScreen = (props: Props) => {
     <>
       <Nav />
       <div className=" flex flex-wrap md:grid md:grid-cols-2 md:grid-rows-1 gap-4 w-full h-full">
-        <div className=" w-full lg:ml-96 lg:w-4/5 border-r-[1px] border-r-gray p-4">
+        <div className=" w-full lg:ml-80 lg:w-4/5 border-r-[1px] border-r-gray p-4">
           <TagList tags={tagLists} />
           <div className="flex-col justify-center items-center">
             <BlogCard
